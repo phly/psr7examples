@@ -49,7 +49,7 @@ In the case of emitting a file, this means that you will:
 - Provide your stream to the response.
 - Return your response.
 
-Which looks like what we have in [copy-stream.php](copy-stream.php):
+Which looks like what we have in [copy-stream.php](#file-copy-stream-php):
 
 ```php
 $image = __DIR__ . '/cuervo.jpg';
@@ -75,10 +75,10 @@ effects that act as a barrier to testing and other quality assurance activities.
 
 There _is_ a way to accomplish it, however, with a little trickery: wrapping any
 output-emitting code in a callback, and passing this to a callback-enabled
-stream implementation. The [CallbackStream](CallbackStream.php) implementation
+stream implementation. The [CallbackStream](#file-callbackstream-php) implementation
 in this gist is one potential way to accomplish it.
 
-As an example, from [php-output.php](php-output.php):
+As an example, from [php-output.php](#file-php-output-php):
 
 ```php
 $output = new CallbackStream(function () use ($request) {
@@ -111,9 +111,9 @@ Ruby's Rack specification uses an iterable body for response messages, vs a
 stream. In some situations, such as returning large data sets, this could be
 tremendously useful. Can PSR-7 accomplish it?
 
-The answer is, succinctly, yes. The [IteratorStream](IteratorStream.php)
+The answer is, succinctly, yes. The [IteratorStream](#file-iteratorstream-php)
 implementation in this gist is a rough prototype showing how it may work; usage
-would be as in [iterator.php](iterator.php):
+would be as in [iterator.php](#file-iterator-php):
 
 ```php
 $output = new IteratorStream(new ArrayObject([
@@ -126,7 +126,7 @@ return (new Response())
     ->withBody($output);
 ```
 
-or, with a generator per [generator.php](generator.php):
+or, with a generator per [generator.php](#file-generator-php):
 
 ```php
 $generator = function ($count) {
