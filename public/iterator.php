@@ -11,7 +11,7 @@ use Phly\Http\Response;
 use Phly\Http\Server;
 use Psr7Examples\IteratorStream;
 
-require 'vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $server = Server::createServer(function ($request, $response, $done) {
     $output = new IteratorStream(new ArrayObject([

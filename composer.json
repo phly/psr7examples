@@ -5,7 +5,7 @@
     },
     "autoload": {
       "psr-4": {
-        "Psr7Examples\\": "."
+        "Psr7Examples\\": "src/"
       }
     }
 }

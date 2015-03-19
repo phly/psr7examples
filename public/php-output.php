@@ -17,7 +17,7 @@ use Phly\Http\Response;
 use Phly\Http\Server;
 use Psr7Examples\CallbackStream;
 
-require 'vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $server = Server::createServer(function ($request, $response, $done) {
     $output = new CallbackStream(function () use ($request) {

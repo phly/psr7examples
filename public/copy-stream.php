@@ -14,7 +14,7 @@ use Phly\Http\Response;
 use Phly\Http\Server;
 use Phly\Http\Stream;
 
-require 'vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $server = Server::createServer(function ($request, $response, $done) {
     // Cuervo was our original Basset Hound; this was her in her natural habitat.
