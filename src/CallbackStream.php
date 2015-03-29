@@ -40,20 +40,25 @@ class CallbackStream implements StreamableInterface
      */
     public function __toString()
     {
-        ob_start();
-        $this->output();
-        return ob_get_clean();
+        return $this->output();
     }
     
-    public function output() {
-
+    /**
+     * Execute the callback with output buffering.
+     *
+     * @return null|string Null on second and subsequent calls.
+     */
+    public function output()
+    {
         if ($this->called) {
             return;
         }
         
         $this->called = true;
-        call_user_func($this->callback);
 
+        ob_start();
+        call_user_func($this->callback);
+        return ob_get_clean();
     }
 
     /**
@@ -164,9 +169,7 @@ class CallbackStream implements StreamableInterface
      */
     public function read($length)
     {
-        ob_start();
-        $this->output();
-        return ob_get_clean();
+        return $this->output();
     }
 
     /**
@@ -174,9 +177,7 @@ class CallbackStream implements StreamableInterface
      */
     public function getContents()
     {
-        ob_start();
-        $this->output();
-        return ob_get_clean();
+        return $this->output();
     }
 
     /**
