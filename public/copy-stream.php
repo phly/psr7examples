@@ -24,7 +24,6 @@ $server = Server::createServer(function ($request, $response, $done) {
         ->withHeader('Content-Type', 'image/jpeg')
         ->withHeader('Content-Length', (string) filesize($image))
         ->withBody(new Stream($image));
-    return $response;
 }, $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES);
 
 $server->listen();
