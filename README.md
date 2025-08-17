@@ -1,5 +1,9 @@
 # PSR-7 Stream Examples
 
+> :warning: **Archived 2025-08-17**
+> 
+> Use at your own risk.
+
 [PSR-7](https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md)
 uses `Psr\Http\Message\StreamableInterface` to represent content for a
 message. This has a variety of benefits, as outlined in the specification.
